@@ -1,0 +1,30 @@
+﻿@model IEnumerable<WebCamp.Models.City>
+
+<table>
+    <thead>
+    <tr>
+        <td></td>
+        <td>Navn</td>
+        <td>Innbyggere</td>
+    </tr>
+    </thead>
+    @foreach (var city in Model)
+    {
+        <tr>
+            <td>
+                @if (!string.IsNullOrWhiteSpace(city.IconUrl))
+                {
+                    <img src="@city.IconUrl"/>
+                }</td>
+            <td>@Html.ActionLink(city.Name, "Details", new{id = city.Id})</td>
+            <td>@city.Polulation.ToString("###.###.###")</td>
+        </tr>
+    }
+    <tfoot>
+    <tr>
+        <td></td>
+        <td>@Model.Count()</td>
+        <td>@Model.Sum(c => c.Polulation).ToString("###.###.###")</td>
+    </tr>
+    </tfoot>
+</table>

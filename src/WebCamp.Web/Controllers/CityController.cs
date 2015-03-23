@@ -8,7 +8,6 @@ namespace WebCamp.Web.Controllers
 {
     public class CityController : Controller
     {
-        // GET: City
         public ActionResult Index()
         {
             // TODO - get model
@@ -16,12 +15,12 @@ namespace WebCamp.Web.Controllers
             return View(cities);
         }
 
-        [ActionName("Index")]
-        public ActionResult Index(int id)
+        [ActionName("Details")]
+        public ActionResult Details(int id)
         {
             // TODO - get model
             var city = new City();
-            return View("CityDetails", city);
+            return View("Details", city);
         }
     }
 }

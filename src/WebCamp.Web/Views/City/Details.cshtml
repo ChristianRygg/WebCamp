@@ -1,0 +1,11 @@
+﻿@model WebCamp.Models.City
+
+<h2>@Model.Name@if (Model.IsCapital){<text> (hovedstad)</text>}</h2>
+
+@if (!string.IsNullOrWhiteSpace(Model.ImageUrl))
+{
+    <img src="@Model.ImageUrl" alt="Bilde av @Model.Name"/>
+}
+
+<p><strong>Grunnlangt: </strong> @Model.FoundedYear</p>
+<p><strong>Innbyggere: </strong> @Model.Polulation</p>
